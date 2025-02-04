@@ -2,7 +2,7 @@
 import path from 'path';
 import { Command } from 'commander';
 import fs from 'fs';
-import app from './src/parser.js';
+import app from '../src/index.js';
 
  // const { Command } = require('commander');
 

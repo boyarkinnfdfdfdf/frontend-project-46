@@ -1,3 +1,3 @@
-export default (data) => {
- return JSON.parse(data);
+export default () => {
+     console.log('parser');
 };

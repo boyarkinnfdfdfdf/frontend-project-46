@@ -40,10 +40,10 @@ gendiff
         fs.mkdirSync(srcDir);
     }
 
-    const parserContent = "export default () => {\n     console.log('parser');\n};";
+    const parserContent = 'export default () => {\n     console.log("parser");\n};';
     fs.writeFileSync(parserFile, parserContent);
 
-    const indexFileContent = "import parser from './parser';\n\nexport default () => {\n    console.log('gendiff');\n   parser();\n};";
+    const indexFileContent = 'import parser from "./parser.js";\n\nexport default () => {\n    console.log("gendiff");\n   parser();\n};';
     fs.writeFileSync(indexFile, indexFileContent);
     console.log('Project structure generated successfully');
 });   

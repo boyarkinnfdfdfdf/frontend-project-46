@@ -1,6 +1,5 @@
 import plain from './plain.js';
 import stylish from './stylish.js';
-
 const form = (tree, format) => {
   switch (format) {
     case 'stylish':

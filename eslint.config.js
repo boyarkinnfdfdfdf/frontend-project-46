@@ -1,7 +1,7 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
-import pluginJest from "eslint-plugin-jest"; 
+import pluginJest from "eslint-plugin-jest";
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
     languageOptions: { globals: globals.browser },
     settings: {
       react: {
-        version: "detect",  
+        version: "detect",
       },
     },
     plugins: {
@@ -17,12 +17,13 @@ export default [
       jest: pluginJest,
     },
     rules: {
+      "quotes": ["error", "double"],
       
     },
     extends: [
       pluginJs.configs.recommended,
       pluginReact.configs.flat.recommended,
-      "plugin:jest/recommended" 
+      "plugin:jest/recommended",
     ],
   },
 ];

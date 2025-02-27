@@ -50,14 +50,4 @@ To select the output format:
 gendiff --format plain <path to file1> <path to file2>
 ```
 
-### Examples
-#### Two JSON files with nested objects compare (stylish formatter)
 
-
-#### Two YML files with nested objects compare (stylish formatter)
-
-
-#### Plain formatter
-
-
-#### JSON formatter

@@ -7,7 +7,10 @@ import form from './formatters/formatters.js';
 
 const readfile = (filepath) => readFileSync(resolve(cwd(), filepath), 'utf-8');
 
-const getExtension = (file) => file.split('.').pop();
+const getExtension = (file) => {
+  const parts = file.split('.');
+  return parts[parts.length - 1];
+};
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const file1 = parseFile(getExtension(filepath1), readfile(filepath1));

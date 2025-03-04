@@ -5,20 +5,14 @@ import parseFile from './parsers.js';
 import buildDiff from './buildDiff.js';
 import form from './formatters/formatters.js';
 
-const readfile = (filepath) => {
-  const currentDir = cwd();
-  const absolutePath = resolve(currentDir, filepath);
-  const content = readFileSync(absolutePath, 'utf-8');
-  return content;
-};
+const readfile = (filepath) => readFileSync(resolve(cwd(), filepath), 'utf-8');
 
-const getExtension = (file) => file.split('.')[1];
+const getExtension = (file) => file.split('.').pop();
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const file1 = parseFile(getExtension(filepath1), readfile(filepath1));
   const file2 = parseFile(getExtension(filepath2), readfile(filepath2));
-  const diffTree = buildDiff(file1, file2);
-  return form(diffTree, format);
+  return form(buildDiff(file1, file2), format);
 };
 
 export default genDiff;
